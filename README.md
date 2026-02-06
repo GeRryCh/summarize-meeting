@@ -6,6 +6,7 @@ A Claude Code plugin that summarizes meeting transcription notes and exports the
 
 - **Automatic language detection** — the summary is written in the original language of the transcription
 - **Structured output** — executive summary, key discussion points, decisions, action items, and open questions
+- **Tech leader brief** — automatically generates a separate `.md` file with technical highlights, risks, your personal action items as a checklist, and delegated tasks to track
 - **Flexible export** — delegates to preinstalled document skills (docx, pdf, pptx, etc.)
 
 ## Installation
