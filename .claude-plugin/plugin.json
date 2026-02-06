@@ -1,0 +1,8 @@
+{
+  "name": "summarize-meeting",
+  "description": "Summarize meeting transcription notes and export to docx, pdf, or pptx",
+  "version": "1.0.0",
+  "author": {
+    "name": "germanv"
+  }
+}
