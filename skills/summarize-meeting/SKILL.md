@@ -45,13 +45,29 @@ Generate a structured summary with these sections (use section titles in the det
 - Use the corresponding document skill (e.g. the `docx` skill for .docx files, `pdf` skill for .pdf, `pptx` skill for .pptx) to create and save the file.
 - Use a sensible default filename like `meeting-summary-YYYY-MM-DD.{ext}` unless the user specifies one.
 
+#### Formatting requirements (especially for .docx)
+
+The generated document must be professionally formatted. Follow the corresponding document skill closely and ensure:
+
+- **Heading styles**: Use proper Word heading styles (`Heading1`, `Heading2`, etc.) for all section titles — never plain bold text. This ensures headings appear in the navigation pane and Table of Contents.
+- **RTL / Bidi support**: If the meeting language is RTL (Hebrew, Arabic, etc.), set `bidi: true` on every paragraph and text run, and set section-level `bidi: true`. Do not rely solely on right-alignment (`jc: right`) — that is not sufficient for proper RTL rendering.
+- **Styled title block**: The document title should be visually prominent (large font, color, centered) with a separator line underneath, followed by the date.
+- **Bullet lists**: Use Word's built-in numbering system (`LevelFormat.BULLET`) — never insert unicode bullet characters manually.
+- **Numbered lists**: Use Word's built-in numbering system (`LevelFormat.DECIMAL`) — never hardcode "1.", "2." as text.
+- **Tables**: Use `WidthType.DXA` for all table and cell widths (never percentages). Include a styled header row (dark background, white text), cell padding/margins, and alternating row shading for readability.
+- **Header and footer**: Include a running header with the document title (small, grey, italics) and a footer with page numbers.
+- **Page break**: Insert a page break before the Action Items table if the document is long enough.
+- **Font**: Use Arial as the default font (universally supported, good for both LTR and RTL).
+
 ### Step 5: Generate the Tech Leader brief (.md)
 
 **Always** create an additional Markdown file alongside the main summary. This file is a personal brief for the technical leader.
 
 Filename: `meeting-tech-brief-YYYY-MM-DD.md` (same date as the main summary), saved in the same directory.
 
-The file must contain these sections (in the detected language):
+The tech brief must **always be written in English**, regardless of the meeting's original language. This ensures it is universally readable across technical teams and tools.
+
+The file must contain these sections (in English):
 
 1. **Technical Highlights** — extract every technical topic discussed: architecture decisions, system design, infrastructure, tooling, libraries, APIs, performance, security, tech debt, migrations, incidents, etc. For each item provide a short summary of what was said and any conclusion reached.
 2. **Technical Risks & Concerns** — flag anything that could become a blocker, a scalability issue, a security risk, or technical debt. Include items that were raised but not resolved.
