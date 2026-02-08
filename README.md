@@ -5,8 +5,9 @@ A Claude Code plugin that summarizes meeting transcription notes and exports the
 ## Features
 
 - **Automatic language detection** — the summary is written in the original language of the transcription
-- **Structured output** — executive summary, key discussion points, decisions, action items, and open questions
-- **Tech leader brief** — automatically generates a separate `.md` file with technical highlights, risks, your personal action items as a checklist, and delegated tasks to track
+- **Standard & detailed modes** — concise summary (10-20%) or comprehensive summary (50-70%) of the original
+- **Tech leader brief** — optional standalone technical review with highlights, risks, action items, dependencies, and metrics
+- **Interactive workflow** — the `/start` command guides you through choosing summary type and optional technical review
 - **Flexible export** — delegates to preinstalled document skills (docx, pdf, pptx, etc.)
 
 ## Installation
@@ -17,12 +18,39 @@ Install via the Claude Code plugin manager or load locally:
 claude --plugin-dir ./summarize-meeting
 ```
 
+## Commands
+
+| Command | Description |
+|---|---|
+| `/start` | Interactive workflow — choose summary type, then optionally add a technical review |
+| `/summarize-meeting` | Standard concise summary (10-20% of original length) |
+| `/detailed-summary` | Comprehensive detailed summary (50-70% of original length) |
+| `/technical-review` | Technical leader's brief only (English `.md` file) |
+
 ## Usage
 
-Invoke the command inside Claude Code:
+**Interactive workflow (recommended):**
 
 ```
-/summarize-meeting:summarize-meeting path/to/transcript.txt
+/start path/to/transcript.txt
+```
+
+**Direct standard summary:**
+
+```
+/summarize-meeting path/to/transcript.txt
+```
+
+**Direct detailed summary:**
+
+```
+/detailed-summary path/to/transcript.txt
+```
+
+**Technical review only:**
+
+```
+/technical-review path/to/transcript.txt
 ```
 
 Or simply provide transcription text and ask Claude to summarize the meeting — the skill triggers automatically.
@@ -34,9 +62,16 @@ summarize-meeting/
 ├── .claude-plugin/
 │   └── plugin.json
 ├── commands/
-│   └── summarize-meeting.md
+│   ├── start.md
+│   ├── summarize-meeting.md
+│   ├── detailed-summary.md
+│   └── technical-review.md
 ├── skills/
-│   └── summarize-meeting/
+│   ├── summarize-meeting/
+│   │   └── SKILL.md
+│   ├── detailed-summary/
+│   │   └── SKILL.md
+│   └── technical-review/
 │       └── SKILL.md
 └── README.md
 ```

@@ -1,6 +1,6 @@
 {
   "name": "summarize-meeting",
-  "description": "Summarize meeting transcription notes and export to docx, pdf, or pptx",
+  "description": "Summarize meeting transcription notes with standard or detailed modes, optional technical review, and interactive workflow. Exports to docx, pdf, pptx, or md.",
   "version": "1.0.0",
   "author": {
     "name": "germanv"
