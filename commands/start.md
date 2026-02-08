@@ -14,14 +14,18 @@ This is an interactive workflow that guides the user through summarizing a meeti
 - If no transcription is provided, ask the user to provide a file path or paste the transcription text.
 - Keep the full transcription content available for reuse in later steps.
 
-### Step 2: Ask which summary type
+### Step 2: Gather requirements
 
-Present the user with a choice:
+Ask the user **both** questions before starting any generation:
 
-1. **Standard summary** — concise, covers the key points (10-20% of the original length)
-2. **Detailed summary** — comprehensive, captures nearly every aspect of the discussion (50-70% of the original length)
+1. **Summary type:**
+   - **Standard summary** — concise, covers the key points (10-20% of the original length)
+   - **Detailed summary** — comprehensive, captures nearly every aspect of the discussion (50-70% of the original length)
 
-Wait for the user to choose before proceeding.
+2. **Technical review:**
+   - Would you also like a technical leader's brief? This creates a separate English `.md` file with technical highlights, risks, action items, dependencies, and metrics.
+
+Wait for the user to answer both questions before proceeding.
 
 ### Step 3: Generate the chosen summary
 
@@ -30,15 +34,7 @@ Wait for the user to choose before proceeding.
 
 Complete the summary and save it to a file before moving on.
 
-### Step 4: Ask about technical review
+### Step 4: Generate technical review if requested
 
-After the summary is saved, ask the user:
-
-> Would you also like a technical leader's brief? This creates a separate English `.md` file with technical highlights, risks, action items, dependencies, and metrics.
-
-Wait for the user to respond.
-
-### Step 5: Generate technical review if requested
-
-- If the user says **yes**, use the **technical-review** skill with the same transcription.
-- If the user says **no**, thank them and end the workflow.
+- If the user requested a technical review, use the **technical-review** skill with the same transcription.
+- If the user declined, thank them and end the workflow.

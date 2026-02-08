@@ -25,24 +25,24 @@ Identify the language of the transcription from its content. All output **must**
 Generate a comprehensive summary with these sections (use section titles in the detected language):
 
 1. **Meeting Title** — infer from context or use a descriptive title.
-2. **Date & Participants** — extract if mentioned; omit if not available. If roles or teams are mentioned, include them next to each participant.
+2. **Date** — extract if mentioned; omit if not available.
 3. **Executive Summary** — 4-6 sentence high-level overview covering the meeting's purpose, main outcomes, and overall direction.
 4. **Detailed Discussion Log** — this is the core section. For each topic discussed, create a subsection with:
    - **Topic title** as a subheading.
    - **Context / Background** — why this topic was raised, any prior context mentioned.
-   - **Discussion** — a thorough account of the conversation: who said what, the arguments made, concerns raised, alternatives proposed, and how the discussion evolved. Preserve the reasoning and logic behind positions, not just conclusions. Use attributed points (e.g., "[Person] raised that...") when speakers are identifiable.
+   - **Discussion** — a thorough account of the conversation: the arguments made, concerns raised, alternatives proposed, and how the discussion evolved. Preserve the reasoning and logic behind positions, not just conclusions. Use impersonal phrasing (e.g., "it was raised that…", "a concern was noted…", "the team discussed…").
    - **Outcome** — what was decided, agreed upon, or left open for this topic.
 5. **Decisions Made** — numbered list of every concrete decision reached, with a brief note on the reasoning behind each decision.
-6. **Action Items** — table with columns: Responsible Person, Task, Context/Details, Deadline (if mentioned), Priority (if mentioned or inferable).
-7. **Risks & Concerns Raised** — anything flagged as a risk, blocker, worry, or potential issue, along with who raised it and any proposed mitigation.
+6. **Action Items** — table with columns: Role/Team, Task, Context/Details, Deadline (if mentioned), Priority (if mentioned or inferable).
+7. **Risks & Concerns Raised** — anything flagged as a risk, blocker, worry, or potential issue, along with any proposed mitigation.
 8. **Open Questions / Parking Lot** — questions that were asked but not answered, topics deferred to a future meeting, and items explicitly marked for follow-up.
-9. **Key Quotes** — notable verbatim quotes that capture important positions, commitments, or context that would be lost in paraphrasing. Attribute each quote to the speaker if identifiable.
+9. **Key Quotes** — notable verbatim quotes that capture important positions, commitments, or context that would be lost in paraphrasing. Do not attribute quotes to specific individuals.
 10. **Next Steps & Follow-up Schedule** — any scheduled follow-ups, next meeting dates, review checkpoints, or milestones mentioned.
 
 **Rules:**
+- **No names** — never mention specific participants by name. Transcription names are often inaccurate. Instead, refer to roles, teams, or use impersonal phrasing (e.g., "it was proposed that…", "the team agreed…", "a concern was raised about…"). In tables, use "Role/Team" instead of a person's name.
 - **Be thorough** — aim for roughly 50-70% of the original transcription length. Capture the reasoning, not just the conclusions.
 - Preserve the original meaning; do not add opinions or external information.
-- Maintain attribution — when a speaker is identifiable, note who said or proposed what.
 - Include dissenting opinions and minority views, not just the consensus.
 - Capture numbers, dates, metrics, version numbers, service names, and any other concrete details verbatim.
 - Use professional tone matching the formality of the original transcription.

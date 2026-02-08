@@ -25,14 +25,15 @@ Identify the language of the transcription from its content. All output **must**
 Generate a structured summary with these sections (use section titles in the detected language):
 
 1. **Meeting Title** — infer from context or use a descriptive title.
-2. **Date & Participants** — extract if mentioned; omit if not available.
+2. **Date** — extract if mentioned; omit if not available.
 3. **Executive Summary** — 2-4 sentence high-level overview.
 4. **Key Discussion Points** — bulleted list of main topics discussed, with brief context for each.
 5. **Decisions Made** — numbered list of concrete decisions reached during the meeting.
-6. **Action Items** — table with columns: Responsible Person, Task, Deadline (if mentioned).
+6. **Action Items** — table with columns: Role/Team, Task, Deadline (if mentioned).
 7. **Open Questions / Next Steps** — anything unresolved or scheduled for follow-up.
 
 **Rules:**
+- **No names** — never mention specific participants by name. Transcription names are often inaccurate. Instead, refer to roles, teams, or use impersonal phrasing (e.g., "it was proposed that…", "the team agreed…", "a concern was raised about…"). In tables, use "Role/Team" instead of a person's name.
 - Keep the summary concise — aim for roughly 10-20% of the original transcription length.
 - Preserve the original meaning; do not add opinions or external information.
 - Use professional tone matching the formality of the original transcription.

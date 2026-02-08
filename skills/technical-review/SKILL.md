@@ -24,11 +24,11 @@ Extract and analyze all technical content from the transcription. Generate a Mar
 
 1. **Technical Highlights** — extract every technical topic discussed: architecture decisions, system design, infrastructure, tooling, libraries, APIs, performance, security, tech debt, migrations, incidents, etc. For each item provide a detailed summary of what was said, arguments for and against, and any conclusion reached.
 
-2. **Technical Risks & Concerns** — flag anything that could become a blocker, a scalability issue, a security risk, or technical debt. Include items that were raised but not resolved. Note who raised each concern if identifiable.
+2. **Technical Risks & Concerns** — flag anything that could become a blocker, a scalability issue, a security risk, or technical debt. Include items that were raised but not resolved.
 
 3. **My Action Items** — a checklist (`- [ ]`) of action items that are assigned to the tech leader, or that clearly require tech leadership involvement (approvals, reviews, architectural decisions, unblocking others). Include context for each item.
 
-4. **Delegated Technical Tasks** — table with columns: Person, Task, Context, Deadline, Status — for technical tasks assigned to other team members that the tech leader should track.
+4. **Delegated Technical Tasks** — table with columns: Role/Team, Task, Context, Deadline, Status — for technical tasks assigned to team members that the tech leader should track.
 
 5. **Decisions Requiring Follow-up** — any technical decision that was deferred, needs validation, or needs to be communicated to stakeholders. Include the reasoning discussed and what information is needed to finalize.
 
@@ -37,6 +37,7 @@ Extract and analyze all technical content from the transcription. Generate a Mar
 7. **Metrics & Data Points** — any numbers, benchmarks, SLAs, error rates, performance figures, or quantitative data mentioned during the meeting.
 
 **Rules:**
+- **No names** — never mention specific participants by name. Transcription names are often inaccurate. Instead, refer to roles, teams, or use impersonal phrasing (e.g., "it was proposed that…", "the team agreed…", "a concern was raised about…"). In tables, use "Role/Team" instead of a person's name.
 - Focus exclusively on technical and engineering content; skip purely administrative or non-technical topics.
 - Be specific — include service names, endpoint paths, library versions, metric values, or any concrete detail mentioned.
 - The checklist in "My Action Items" must be copy-paste ready for a task tracker.
